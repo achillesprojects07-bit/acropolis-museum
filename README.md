@@ -1,16 +1,16 @@
-# Acropolis Companion — V1.4 Beautiful Museum Diary
+# Acropolis Companion — V1.5 Greek Learning Mode
 
 A GitHub Pages-ready, offline-first PWA for exploring the Acropolis Museum.
 
-**Version visible in app:** `v1.4 Beautiful Museum Diary`
+**Version visible in app:** `v1.5 Greek Learning Mode`
 
 ## What this app does
 
 Acropolis Companion is a personal museum companion. It does **not** replace the official Acropolis Museum Digital Guide. It helps you move through the museum, understand what you are seeing, learn Greek words, and save your visit as a personal memory book.
 
-## V1.4 upgrade
+## V1.5 upgrade
 
-V1.4 focuses on the Museum Diary.
+V1.5 focuses on the Museum Diary.
 
 New / upgraded features:
 
@@ -83,3 +83,25 @@ Recommended next improvements:
 - Mini quizzes
 - Saved Greek words from diary entries
 - “Words I learned today” review screen
+
+
+## V1.5 Greek Learning Mode
+
+This version upgrades the Greek tab into a mini learning path for the museum.
+
+Added in V1.5:
+
+- Visible app version: `v1.5 Greek Learning Mode`
+- Themed Greek learning sets:
+  - Core museum words
+  - Statues and people
+  - Temple and architecture
+  - Gods and offerings
+  - Useful museum phrases
+- Greek words with transliteration, English meaning, and sample phrase
+- Listen button using browser `el-GR` speech synthesis when supported
+- Mini quiz for the selected theme
+- Save Greek practice to the Museum Diary
+- Updated export filename for diary text
+
+Upload all four files to GitHub Pages and replace the old version.
