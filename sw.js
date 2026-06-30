@@ -1,4 +1,4 @@
-const CACHE_NAME = 'acropolis-companion-v1-5';
+const CACHE_NAME = 'acropolis-companion-v2-0';
 const ASSETS = ['./', './index.html', './manifest.webmanifest'];
 
 self.addEventListener('install', event => {

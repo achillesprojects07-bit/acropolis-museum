@@ -1,33 +1,41 @@
-# Acropolis Companion — V1.5 Greek Learning Mode
+# Acropolis Companion — V2.0 Practical Camera Scan
 
 A GitHub Pages-ready, offline-first PWA for exploring the Acropolis Museum.
 
-**Version visible in app:** `v1.5 Greek Learning Mode`
+**Version visible in app:** `v2.0 Practical Camera Scan`
 
 ## What this app does
 
-Acropolis Companion is a personal museum companion. It does **not** replace the official Acropolis Museum Digital Guide. It helps you move through the museum, understand what you are seeing, learn Greek words, and save your visit as a personal memory book.
+Acropolis Companion is a personal museum companion. It does **not** replace the official Acropolis Museum Digital Guide. It helps you move through the museum, capture object photos, confirm the museum label, understand what you are seeing, learn Greek words, and save your visit as a personal memory book.
 
-## V1.5 upgrade
+## V2.0 upgrade
 
-V1.5 focuses on the Museum Diary.
+V2.0 adds **Practical Camera Scan**.
 
-New / upgraded features:
+This is not automatic AI recognition yet. It is the safe museum version:
 
-- Beautiful Museum Diary screen
-- Add optional photo to a diary entry
-- Edit saved diary entries
-- Delete saved diary entries
-- Search diary entries
-- Save museum area per entry
-- Separate fields for:
-  - What I saw
-  - What I felt
-  - Greek words I learned
-  - Favorite detail
-- Export diary as a `.txt` file
-- Object Explainer photo can now be saved into the diary entry
-- Version badge updated inside the app
+1. Take or upload a photo of the object or label.
+2. Confirm the label or official guide name.
+3. Add object type, museum area, and visible clues.
+4. Create a practical scan guide.
+5. Send the details into the Object Explainer.
+6. Save the photo and notes to the Museum Diary.
+
+## New / upgraded features in V2.0
+
+- New **Scan** tab in the bottom navigation
+- Camera/photo input with rear-camera hint on mobile
+- Photo preview before saving
+- Confirmed museum label field
+- Object type selector
+- Museum area selector
+- Visible clues field
+- **Create scan guide** button
+- **Use in Object Explainer** button
+- **Save scan to diary** button
+- Scan photo can move into the Object Explainer
+- Diary export filename updated to V2.0
+- Visible app version updated to `v2.0 Practical Camera Scan`
 - Service worker cache updated for GitHub Pages refresh
 
 ## Existing features preserved
@@ -38,7 +46,8 @@ New / upgraded features:
 - Mark route stops done
 - Save route stops to diary
 - Smarter Object Explainer
-- Greek Words Mode with el-GR speech support where available
+- Greek Learning Mode with themed vocabulary, phrases, listening, and mini quiz
+- Beautiful Museum Diary with photos, editing, search, delete, and export
 - Offline-first localStorage saving
 - GitHub Pages-ready static files
 
@@ -66,7 +75,7 @@ Upload all of these files to your GitHub repository:
 
 ## Important accuracy note
 
-This app is not yet a true museum object-recognition app. For object identity, confirm with the museum label or the official Acropolis Museum Digital Guide. The app is designed as a guided interpretation, Greek-learning, and diary companion.
+V2.0 is **not yet true AI object recognition**. The camera/photo feature helps you capture the object and move information into the explainer and diary. For object identity, confirm with the museum label or the official Acropolis Museum Digital Guide.
 
 ## Storage note
 
@@ -74,34 +83,12 @@ Diary entries are stored locally in the browser using `localStorage`. If the bro
 
 ## Suggested next upgrade
 
-**V1.5 — Greek Learning Mode upgrade**
+**V2.1 AI Vision Scan**
 
-Recommended next improvements:
+Possible next improvements:
 
-- More museum vocabulary by area
-- Phrase practice for asking questions in Greek
-- Mini quizzes
-- Saved Greek words from diary entries
-- “Words I learned today” review screen
-
-
-## V1.5 Greek Learning Mode
-
-This version upgrades the Greek tab into a mini learning path for the museum.
-
-Added in V1.5:
-
-- Visible app version: `v1.5 Greek Learning Mode`
-- Themed Greek learning sets:
-  - Core museum words
-  - Statues and people
-  - Temple and architecture
-  - Gods and offerings
-  - Useful museum phrases
-- Greek words with transliteration, English meaning, and sample phrase
-- Listen button using browser `el-GR` speech synthesis when supported
-- Mini quiz for the selected theme
-- Save Greek practice to the Museum Diary
-- Updated export filename for diary text
-
-Upload all four files to GitHub Pages and replace the old version.
+- Optional AI Vision API connection
+- Image-based object description
+- Label reading/OCR assistance
+- Confidence warning for uncertain matches
+- Stronger “confirm before saving” workflow
