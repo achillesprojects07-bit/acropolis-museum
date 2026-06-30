@@ -4,67 +4,35 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#161313" />
-  <title>Acropolis Companion</title>
+  <title>Acropolis Companion V1.1</title>
   <link rel="manifest" href="manifest.webmanifest" />
   <style>
-    :root{
-      --bg:#f7f3ec;
-      --paper:#fffdf8;
-      --ink:#1b1714;
-      --muted:#6f6258;
-      --line:#e7dccd;
-      --gold:#b28b43;
-      --gold2:#d8bd78;
-      --charcoal:#161313;
-      --soft:#fbf7ef;
-      --danger:#8c2f24;
-      --ok:#32634a;
-      --shadow: 0 18px 48px rgba(22,19,19,.13);
-      --radius: 24px;
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;min-height:100%;font-family: ui-serif, Georgia, Cambria, "Times New Roman", serif;color:var(--ink);background:
-      radial-gradient(circle at top left, rgba(216,189,120,.25), transparent 32rem),
-      linear-gradient(145deg,#f6f0e7,#fffaf1 48%,#eee4d7);}
-    body{padding: env(safe-area-inset-top) 0 env(safe-area-inset-bottom)}
-    button,input,textarea,select{font:inherit}
-    button{cursor:pointer;-webkit-tap-highlight-color:transparent}
-    .app{max-width:940px;margin:0 auto;padding:18px 16px 80px}
+    :root{--bg:#f7f3ec;--paper:#fffdf8;--ink:#1b1714;--muted:#6f6258;--line:#e7dccd;--gold:#b28b43;--gold2:#d8bd78;--charcoal:#161313;--soft:#fbf7ef;--danger:#8c2f24;--ok:#32634a;--shadow:0 18px 48px rgba(22,19,19,.13);--radius:24px}
+    *{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:ui-serif,Georgia,Cambria,"Times New Roman",serif;color:var(--ink);background:radial-gradient(circle at top left,rgba(216,189,120,.25),transparent 32rem),linear-gradient(145deg,#f6f0e7,#fffaf1 48%,#eee4d7)}
+    body{padding:env(safe-area-inset-top) 0 env(safe-area-inset-bottom)}button,input,textarea,select{font:inherit}button{cursor:pointer;-webkit-tap-highlight-color:transparent}.app{max-width:940px;margin:0 auto;padding:18px 16px 88px}
     header{position:sticky;top:0;z-index:5;margin:-18px -16px 18px;padding:18px 16px 12px;background:linear-gradient(180deg,rgba(247,243,236,.98),rgba(247,243,236,.86));backdrop-filter:blur(14px);border-bottom:1px solid rgba(231,220,205,.65)}
-    .top{display:flex;align-items:center;gap:12px;justify-content:space-between}
-    .brand{display:flex;align-items:center;gap:12px}
-    .mark{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(145deg,var(--charcoal),#342923);box-shadow:0 8px 24px rgba(0,0,0,.18);color:var(--gold2);font-size:22px}
-    h1{font-size:24px;line-height:1;margin:0;letter-spacing:.2px}.sub{font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:var(--muted);font-size:12px;margin-top:4px}.version{font-family:system-ui,-apple-system,Segoe UI,sans-serif;font-size:11px;color:var(--muted);border:1px solid var(--line);border-radius:99px;padding:5px 9px;background:rgba(255,255,255,.55)}
+    .top{display:flex;align-items:center;gap:12px;justify-content:space-between}.brand{display:flex;align-items:center;gap:12px}.mark{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(145deg,var(--charcoal),#342923);box-shadow:0 8px 24px rgba(0,0,0,.18);color:var(--gold2);font-size:22px}
+    h1{font-size:24px;line-height:1;margin:0;letter-spacing:.2px}.sub{font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:var(--muted);font-size:12px;margin-top:4px}.version{font-family:system-ui,-apple-system,Segoe UI,sans-serif;font-size:11px;color:#fff;border:1px solid rgba(216,189,120,.5);border-radius:99px;padding:6px 10px;background:var(--charcoal);white-space:nowrap}
     .hero{border-radius:32px;padding:26px 22px;background:linear-gradient(150deg,#201a17,#493827);color:#fff;box-shadow:var(--shadow);overflow:hidden;position:relative}.hero:before{content:"";position:absolute;inset:-80px -50px auto auto;width:210px;height:210px;background:radial-gradient(circle,rgba(216,189,120,.35),transparent 65%)}
-    .hero h2{font-size:34px;line-height:1.02;margin:0 0 10px}.hero p{font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:#efe4d5;margin:0;line-height:1.5}.hero .pill{display:inline-flex;margin-bottom:16px;border:1px solid rgba(216,189,120,.48);color:#f8e8bb;border-radius:99px;padding:7px 11px;font-family:system-ui,-apple-system,Segoe UI,sans-serif;font-size:12px}
-    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:18px 0}.card{background:rgba(255,253,248,.86);border:1px solid var(--line);border-radius:var(--radius);padding:18px;box-shadow:0 8px 24px rgba(22,19,19,.06)}
-    .navbtn{width:100%;text-align:left;border:1px solid var(--line);background:var(--paper);border-radius:22px;padding:18px;min-height:118px;box-shadow:0 8px 22px rgba(22,19,19,.06);transition:.15s transform,.15s border}.navbtn:active{transform:scale(.985)}.navbtn b{display:block;font-size:19px;margin-bottom:8px}.navbtn span{display:block;font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:var(--muted);font-size:13px;line-height:1.35}.gold{color:var(--gold)}
-    .section{display:none}.section.active{display:block}.bar{display:flex;gap:8px;align-items:center;margin:16px 0}.back{border:0;background:var(--charcoal);color:#fff;border-radius:999px;padding:11px 14px;font-family:system-ui,-apple-system,Segoe UI,sans-serif}.title{font-size:28px;margin:12px 0 8px}.lead{font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:var(--muted);line-height:1.55;margin:0 0 16px}
-    label{display:block;font-family:system-ui,-apple-system,Segoe UI,sans-serif;font-weight:700;font-size:13px;margin:14px 0 7px}input,textarea,select{width:100%;border:1px solid var(--line);background:#fff;border-radius:16px;padding:14px;color:var(--ink)}textarea{min-height:120px;resize:vertical}.actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:14px 0}.primary,.secondary,.ghost{border-radius:18px;border:1px solid var(--line);padding:14px 14px;font-family:system-ui,-apple-system,Segoe UI,sans-serif;font-weight:800}.primary{background:var(--charcoal);color:#fff;border-color:var(--charcoal)}.secondary{background:#fff;color:var(--ink)}.ghost{background:transparent;color:var(--ink)}
-    .result{white-space:pre-wrap;font-family:system-ui,-apple-system,Segoe UI,sans-serif;line-height:1.55;background:#fff;border:1px solid var(--line);border-radius:22px;padding:18px;margin-top:14px}.notice{font-family:system-ui,-apple-system,Segoe UI,sans-serif;font-size:13px;line-height:1.45;background:#fff8e8;border:1px solid #ead9a9;border-radius:18px;padding:14px;color:#5f4a1f}.route{display:grid;gap:12px}.stop h3{margin:0 0 8px;font-size:22px}.stop p,.stop li{font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:var(--muted);line-height:1.48}.stop ul{padding-left:20px;margin:8px 0}.tagrow{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px}.tag{font-family:system-ui,-apple-system,Segoe UI,sans-serif;font-size:12px;border:1px solid var(--line);border-radius:99px;padding:6px 9px;background:var(--soft)}
-    .words{display:grid;gap:10px}.word{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center}.word strong{font-size:19px}.word small{font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:var(--muted)}.speak{border:0;border-radius:999px;background:var(--charcoal);color:#fff;padding:9px 12px}.diary-item{border:1px solid var(--line);border-radius:20px;padding:15px;background:#fff;margin:10px 0}.diary-item h3{margin:0 0 6px}.diary-item p{font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:var(--muted);white-space:pre-wrap}.delete{border:0;border-radius:999px;background:#f5e7e2;color:var(--danger);padding:8px 11px;font-family:system-ui,-apple-system,Segoe UI,sans-serif;font-weight:800}
-    .footer-tabs{position:fixed;left:0;right:0;bottom:0;z-index:6;background:rgba(255,253,248,.92);backdrop-filter:blur(14px);border-top:1px solid var(--line);padding:8px 10px env(safe-area-inset-bottom);display:flex;justify-content:center}.tabs{max-width:940px;width:100%;display:grid;grid-template-columns:repeat(4,1fr);gap:7px}.tab{border:0;background:transparent;border-radius:14px;padding:9px 4px;font-family:system-ui,-apple-system,Segoe UI,sans-serif;font-size:11px;color:var(--muted)}.tab.active{background:var(--charcoal);color:#fff}
-    .photo-preview{max-width:100%;border-radius:18px;margin-top:10px;border:1px solid var(--line);display:none}.empty{font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:var(--muted);text-align:center;padding:22px}
-    @media(max-width:680px){.grid,.actions{grid-template-columns:1fr}.hero h2{font-size:30px}.app{padding-left:14px;padding-right:14px}.navbtn{min-height:auto}.word{grid-template-columns:1fr}}
+    .hero h2{font-size:34px;line-height:1.02;margin:0 0 10px}.hero p{font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:#efe4d5;margin:0;line-height:1.5}.pill{display:inline-flex;margin:0 6px 10px 0;border:1px solid rgba(216,189,120,.48);color:#f8e8bb;border-radius:99px;padding:7px 11px;font-family:system-ui,-apple-system,Segoe UI,sans-serif;font-size:12px}
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:18px 0}.card{background:rgba(255,253,248,.88);border:1px solid var(--line);border-radius:var(--radius);padding:18px;box-shadow:0 8px 24px rgba(22,19,19,.06)}
+    .navbtn{width:100%;text-align:left;border:1px solid var(--line);background:var(--paper);border-radius:22px;padding:18px;min-height:118px;box-shadow:0 8px 22px rgba(22,19,19,.06);transition:.15s transform,.15s border}.navbtn:active,.primary:active,.secondary:active,.ghost:active{transform:scale(.985)}.navbtn b{display:block;font-size:19px;margin-bottom:8px}.navbtn span{display:block;font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:var(--muted);font-size:13px;line-height:1.35}.new{color:var(--gold);font-weight:800}
+    .section{display:none}.section.active{display:block}.bar{display:flex;gap:8px;align-items:center;margin:16px 0}.back{border:0;background:var(--charcoal);color:#fff;border-radius:999px;padding:11px 14px;font-family:system-ui,-apple-system,Segoe UI,sans-serif}.title{font-size:28px;margin:12px 0 8px}.lead,.small{font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:var(--muted);line-height:1.55}.lead{margin:0 0 16px}.small{font-size:13px;margin:8px 0}
+    label{display:block;font-family:system-ui,-apple-system,Segoe UI,sans-serif;font-weight:800;font-size:13px;margin:14px 0 7px}input,textarea,select{width:100%;border:1px solid var(--line);background:#fff;border-radius:16px;padding:14px;color:var(--ink)}textarea{min-height:110px;resize:vertical}.actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:14px 0}.primary,.secondary,.ghost{border-radius:18px;border:1px solid var(--line);padding:14px;font-family:system-ui,-apple-system,Segoe UI,sans-serif;font-weight:850}.primary{background:var(--charcoal);color:#fff;border-color:var(--charcoal)}.secondary{background:#fff;color:var(--ink)}.ghost{background:transparent;color:var(--ink)}
+    .result{white-space:pre-wrap;font-family:system-ui,-apple-system,Segoe UI,sans-serif;line-height:1.55;background:#fff;border:1px solid var(--line);border-radius:22px;padding:18px;margin-top:14px}.notice{font-family:system-ui,-apple-system,Segoe UI,sans-serif;font-size:13px;line-height:1.45;background:#fff8e8;border:1px solid #ead9a9;border-radius:18px;padding:14px;color:#5f4a1f;margin-top:12px}.route{display:grid;gap:12px}.stop h3{margin:0 0 8px;font-size:22px}.stop p,.stop li{font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:var(--muted);line-height:1.48}.tagrow{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px}.tag{font-family:system-ui,-apple-system,Segoe UI,sans-serif;font-size:12px;border:1px solid var(--line);border-radius:99px;padding:6px 9px;background:var(--soft)}
+    .words{display:grid;gap:10px}.word{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center}.word strong{font-size:19px}.word small{font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:var(--muted)}.speak{border:0;border-radius:999px;background:var(--charcoal);color:#fff;padding:9px 12px}.diary-item{border:1px solid var(--line);border-radius:20px;padding:15px;background:#fff;margin:10px 0}.diary-item h3{margin:0 0 6px}.diary-item p{font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:var(--muted);white-space:pre-wrap}.delete{border:0;border-radius:999px;background:#f5e7e2;color:var(--danger);padding:8px 11px;font-family:system-ui,-apple-system,Segoe UI,sans-serif;font-weight:800}.photo-preview{max-width:100%;border-radius:18px;margin-top:10px;border:1px solid var(--line);display:none}.empty{text-align:center;padding:22px}
+    .footer-tabs{position:fixed;left:0;right:0;bottom:0;z-index:6;background:rgba(255,253,248,.92);backdrop-filter:blur(14px);border-top:1px solid var(--line);padding:8px 10px env(safe-area-inset-bottom);display:flex;justify-content:center}.tabs{max-width:940px;width:100%;display:grid;grid-template-columns:repeat(5,1fr);gap:6px}.tab{border:0;background:transparent;border-radius:14px;padding:9px 4px;font-family:system-ui,-apple-system,Segoe UI,sans-serif;font-size:10.5px;color:var(--muted)}.tab.active{background:var(--charcoal);color:#fff}
+    @media(max-width:680px){.grid,.actions{grid-template-columns:1fr}.hero h2{font-size:30px}.app{padding-left:14px;padding-right:14px}.navbtn{min-height:auto}.word{grid-template-columns:1fr}.tabs{grid-template-columns:repeat(5,1fr)}}
   </style>
 </head>
 <body>
 <div class="app">
-  <header>
-    <div class="top">
-      <div class="brand"><div class="mark">Α</div><div><h1>Acropolis Companion</h1><div class="sub">See less. Understand more.</div></div></div>
-      <div class="version">v1.0 GitHub</div>
-    </div>
-  </header>
-
+  <header><div class="top"><div class="brand"><div class="mark">Α</div><div><h1>Acropolis Companion</h1><div class="sub">See less. Understand more.</div></div></div><div class="version" id="versionBadge">v1.1</div></div></header>
   <main>
     <section id="home" class="section active">
-      <div class="hero">
-        <div class="pill">Museum companion, not a replacement for the official guide</div>
-        <h2>Your private guide inside the Acropolis Museum.</h2>
-        <p>Scan or read the official label, then use this app to understand the story, the meaning, the Greek words, and what to notice.</p>
-      </div>
+      <div class="hero"><span class="pill">V1.1 Museum Walk Mode</span><span class="pill">GitHub Pages ready</span><h2>Your private guide inside the Acropolis Museum.</h2><p>Choose where you are standing, understand the gallery, learn the Greek words, and save what stayed with you.</p></div>
       <div class="grid">
+        <button class="navbtn" onclick="go('walk')"><b><span class="new">New:</span> Museum Walk Mode</b><span>Tap the area you are standing in and get a mini guide.</span></button>
         <button class="navbtn" onclick="go('object')"><b>Explain an object</b><span>Type a label, add a photo, and get a clear museum-style explanation.</span></button>
         <button class="navbtn" onclick="go('routes')"><b>Choose a route</b><span>30, 60, 90, or 120-minute paths through the museum.</span></button>
         <button class="navbtn" onclick="go('greek')"><b>Greek words mode</b><span>Learn practical museum Greek with audio support.</span></button>
@@ -73,122 +41,62 @@
       <div class="notice"><b>Accuracy note:</b> This app helps you interpret. For object identification, confirm with the museum label or the official Acropolis Museum Digital Guide.</div>
     </section>
 
-    <section id="object" class="section">
-      <div class="bar"><button class="back" onclick="go('home')">← Home</button></div>
-      <h2 class="title">Explain an object</h2>
-      <p class="lead">Use the official guide or the museum label first. Then type what it says here. You can also add a photo for your diary.</p>
-      <label>Object name or label text</label>
-      <input id="objName" placeholder="Example: Kore statue, Caryatid, Parthenon frieze..." />
-      <label>Optional photo</label>
-      <input id="objPhoto" type="file" accept="image/*" capture="environment" />
-      <img id="preview" class="photo-preview" alt="Object preview" />
-      <div class="actions">
-        <button class="primary" onclick="explain('simple')">Explain simply</button>
-        <button class="secondary" onclick="explain('story')">Tell me the story</button>
-        <button class="secondary" onclick="explain('notice')">What should I notice?</button>
-        <button class="secondary" onclick="explain('greek')">Greek words</button>
-      </div>
-      <div id="objResult" class="result">Your explanation will appear here.</div>
-      <label>What I felt / want to remember</label>
-      <textarea id="objFeeling" placeholder="Write a note to your future self..."></textarea>
-      <button class="primary" onclick="saveDiaryFromObject()">Save to Museum Diary</button>
+    <section id="walk" class="section">
+      <div class="bar"><button class="back" onclick="go('home')">← Home</button></div><h2 class="title">Museum Walk Mode</h2><p class="lead">Choose where you are standing. The app will tell you what this area means, what to look for, nearby highlights, Greek words, and one reflection question.</p>
+      <label>I am standing in...</label><select id="walkSelect" onchange="renderWalk()"></select>
+      <div id="walkBox" class="route"></div>
+      <div class="actions"><button class="primary" onclick="saveWalkToDiary()">Save this area to diary</button><button class="secondary" onclick="go('object')">Explain an object here</button></div>
     </section>
 
-    <section id="routes" class="section">
-      <div class="bar"><button class="back" onclick="go('home')">← Home</button></div>
-      <h2 class="title">Choose your route</h2>
-      <p class="lead">Pick by time. Each route is designed to keep you moving while still understanding what matters.</p>
-      <label>How much time do you have?</label>
-      <select id="routeSelect" onchange="renderRoute()">
-        <option value="30">30 minutes — essential highlights</option>
-        <option value="60" selected>60 minutes — balanced visit</option>
-        <option value="90">90 minutes — deeper route</option>
-        <option value="120">2 hours — slow and reflective</option>
-      </select>
-      <div id="routeBox" class="route"></div>
-    </section>
+    <section id="object" class="section"><div class="bar"><button class="back" onclick="go('home')">← Home</button></div><h2 class="title">Explain an object</h2><p class="lead">Use the official guide or the museum label first. Then type what it says here. You can also add a photo for your diary.</p>
+      <label>Object name or label text</label><input id="objName" placeholder="Example: Kore statue, Caryatid, Parthenon frieze..." />
+      <label>Optional photo</label><input id="objPhoto" type="file" accept="image/*" capture="environment" /><img id="preview" class="photo-preview" alt="Object preview" />
+      <div class="actions"><button class="primary" onclick="explain('simple')">Explain simply</button><button class="secondary" onclick="explain('story')">Tell me the story</button><button class="secondary" onclick="explain('notice')">What should I notice?</button><button class="secondary" onclick="explain('greek')">Greek words</button></div>
+      <div id="objResult" class="result">Your explanation will appear here.</div><label>What I felt / want to remember</label><textarea id="objFeeling" placeholder="Write one detail you want to keep..."></textarea><button class="primary" onclick="saveDiaryFromObject()">Save to diary</button></section>
 
-    <section id="greek" class="section">
-      <div class="bar"><button class="back" onclick="go('home')">← Home</button></div>
-      <h2 class="title">Greek words mode</h2>
-      <p class="lead">Tap the speaker to hear the word when your phone supports Greek speech.</p>
-      <div id="wordsBox" class="words"></div>
-    </section>
+    <section id="routes" class="section"><div class="bar"><button class="back" onclick="go('home')">← Home</button></div><h2 class="title">Choose a route</h2><p class="lead">Pick your available time. The app gives you a calm path and what to notice at each stop.</p><label>Time available</label><select id="routeSelect" onchange="renderRoute()"><option value="30">30 minutes</option><option value="60">60 minutes</option><option value="90">90 minutes</option><option value="120">2 hours</option></select><div id="routeBox" class="route"></div></section>
 
-    <section id="diary" class="section">
-      <div class="bar"><button class="back" onclick="go('home')">← Home</button></div>
-      <h2 class="title">Museum diary</h2>
-      <p class="lead">Save the objects that stayed with you. This is your personal memory of the museum.</p>
-      <div class="card">
-        <label>Title</label><input id="diaryTitle" placeholder="Example: The Caryatids" />
-        <label>What I saw</label><textarea id="diarySaw"></textarea>
-        <label>What I felt</label><textarea id="diaryFelt"></textarea>
-        <button class="primary" onclick="saveDiaryManual()">Save diary entry</button>
-      </div>
-      <div id="diaryList"></div>
-    </section>
+    <section id="greek" class="section"><div class="bar"><button class="back" onclick="go('home')">← Home</button></div><h2 class="title">Greek words mode</h2><p class="lead">Simple museum Greek. Tap Listen for Greek pronunciation if your browser supports Greek speech.</p><div id="wordsBox" class="words"></div></section>
+
+    <section id="diary" class="section"><div class="bar"><button class="back" onclick="go('home')">← Home</button></div><h2 class="title">Museum diary</h2><p class="lead">Save your visit as a memory book. Everything is stored locally on this phone/browser.</p><label>Object or area name</label><input id="diaryTitle" placeholder="Example: Caryatids, Parthenon Gallery..." /><label>What I saw</label><textarea id="diarySaw"></textarea><label>What I felt / Greek words learned / favorite detail</label><textarea id="diaryFelt"></textarea><div class="actions"><button class="primary" onclick="saveDiaryManual()">Save entry</button><button class="secondary" onclick="exportDiary()">Export diary text</button></div><div id="diaryList"></div></section>
   </main>
 </div>
-
-<div class="footer-tabs">
-  <div class="tabs">
-    <button class="tab active" data-tab="home" onclick="go('home')">Home</button>
-    <button class="tab" data-tab="object" onclick="go('object')">Object</button>
-    <button class="tab" data-tab="routes" onclick="go('routes')">Route</button>
-    <button class="tab" data-tab="diary" onclick="go('diary')">Diary</button>
-  </div>
-</div>
-
+<nav class="footer-tabs"><div class="tabs"><button class="tab active" data-tab="home" onclick="go('home')">Home</button><button class="tab" data-tab="walk" onclick="go('walk')">Walk</button><button class="tab" data-tab="object" onclick="go('object')">Object</button><button class="tab" data-tab="greek" onclick="go('greek')">Greek</button><button class="tab" data-tab="diary" onclick="go('diary')">Diary</button></div></nav>
 <script>
-const LS='acropolis_companion_v1';
-const state=JSON.parse(localStorage.getItem(LS)||'{"diary":[]}');
+const APP_VERSION='v1.1 Museum Walk Mode';
+const LS='acropolis_companion_v11';
+let state=JSON.parse(localStorage.getItem(LS)||'{"diary":[]}');
+function esc(s){return String(s??'').replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));}
 function save(){localStorage.setItem(LS,JSON.stringify(state));}
-function esc(s){return String(s||'').replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));}
-function go(id){document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('active',t.dataset.tab===id)); if(id==='routes')renderRoute(); if(id==='greek')renderWords(); if(id==='diary')renderDiary(); window.scrollTo({top:0,behavior:'smooth'});}
-
-const knowledge={
-  caryatid:{keys:['caryatid','καρυάτιδα','erechtheion'],simple:'A Caryatid is a sculpted female figure used as a column. At the Acropolis Museum, the Caryatids from the Erechtheion are among the most moving objects because they are both architecture and presence: women carrying sacred weight.',story:'Think of her as a woman turned into architecture. She is not decoration only. She holds up memory, temple, city, and loss. Her calm face makes the weight feel almost invisible.',notice:'Notice the balance: one leg bears weight, the other softens the body. Look at the folds of the dress, which behave like column grooves. Notice the missing sister: one Caryatid is in the British Museum.',words:['Καρυάτιδα — Caryatid','ναός — temple','στήλη — column','μάρμαρο — marble']},
-  kore:{keys:['kore','korai','κόρη','archaic'],simple:'A Kore is an Archaic statue of a young woman, often offered to Athena. She is usually shown standing, dressed beautifully, and smiling with the famous Archaic smile.',story:'She is a gift made human. Someone once offered her to the goddess, hoping to be seen, protected, remembered. Her smile is not casual; it belongs to a world where beauty and devotion met.',notice:'Look at the hair, jewelry, clothing folds, and the small smile. Many were once brightly painted, so imagine color instead of plain white marble.',words:['κόρη — maiden / young woman','προσφορά — offering','θεά — goddess','χρώμα — color']},
-  parthenon:{keys:['parthenon','frieze','pediment','metope','παρθενώνας'],simple:'The Parthenon sculptures once belonged to the great temple of Athena on the Acropolis. They show gods, humans, animals, movement, ritual, conflict, and civic pride.',story:'The Parthenon was not only a building. It was Athens telling the world who it believed it was: protected by Athena, disciplined by beauty, and remembered through stone.',notice:'Notice motion in stone: horses turning, fabric moving, bodies leaning, gods appearing relaxed yet powerful. Also notice the museum layout, which aligns you visually with the Parthenon itself.',words:['Παρθενώνας — Parthenon','ζωφόρος — frieze','θεός — god','πόλη — city']},
-  slope:{keys:['slope','slopes','theater','sanctuary','διονύσου'],simple:'The slopes of the Acropolis show everyday sacred life around the hill: sanctuaries, theater, offerings, and public gathering places.',story:'Before the marble height of the Parthenon, there was daily life below it: people walking, praying, watching plays, making offerings, and living near the sacred rock.',notice:'Look for objects connected to rituals, theater, children, households, and small acts of devotion. These pieces make ancient Athens feel human.',words:['θέατρο — theater','ιερό — sanctuary','λατρεία — worship','πόλη — city']}
+function go(id){document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('active',t.dataset.tab===id));window.scrollTo({top:0,behavior:'smooth'});if(id==='diary')renderDiary();}
+document.getElementById('versionBadge').textContent=APP_VERSION;
+const walkAreas={
+ 'Ground Floor: Slopes of the Acropolis':{meaning:'This area introduces the life around the sacred hill before you reach the grand temple story. It shows worship, theater, homes, rituals, and everyday movement beneath the Acropolis.',notice:['Look for objects linked to theater and public life.','Notice small offerings and ordinary objects, not only grand sculpture.','Ask how sacred life and daily life touched each other.'],near:['Sanctuaries on the slopes','Theater-related finds','Household and ritual objects'],words:['θέατρο — theater','ιερό — sanctuary','πόλη — city','προσφορά — offering'],q:'What feels most human here: worship, theater, home, or daily movement?'},
+ 'Archaic Acropolis Gallery':{meaning:'This gallery brings you into early Athens before the classical Parthenon. It is full of sacred offerings, Korai, riders, animals, color, pattern, and the famous Archaic smile.',notice:['Look at faces and the Archaic smile.','Imagine color on hair, clothes, jewelry, and patterns.','Notice posture: still, frontal, ceremonial.'],near:['Kore statues','Archaic smiles','Paint and clothing details'],words:['κόρη — maiden / Kore','χρώμα — color','θεά — goddess','αρχαίος — ancient'],q:'What changes when you imagine these statues painted, not white?'},
+ 'Caryatids / Erechtheion':{meaning:'The Caryatids are women who became architecture. They once supported the porch of the Erechtheion, turning the human body into a column and memory into structure.',notice:['Look at how the body carries weight.','Notice dress folds that act like column grooves.','Feel the quiet dignity: strength without shouting.'],near:['Caryatids','Erechtheion fragments','Architectural sculpture'],words:['Καρυάτιδα — Caryatid','ναός — temple','στήλη — column','μάρμαρο — marble'],q:'Do they feel more like women, columns, guardians, or memories?'},
+ 'Parthenon Gallery':{meaning:'This is the museum’s great climax. The gallery is aligned with the Parthenon itself, so the sculptures are understood in relation to the real temple on the Acropolis.',notice:['Look at movement in horses, bodies, and fabric.','Notice the calm power of gods compared with human motion.','Look outward toward the Acropolis when possible.'],near:['Parthenon frieze','Metopes','Pediments','View toward the Acropolis'],words:['Παρθενώνας — Parthenon','ζωφόρος — frieze','θεός — god','κίνηση — movement'],q:'What does Athens seem to be saying about itself here?'},
+ 'Excavation Area':{meaning:'The excavation reminds you that the museum stands above earlier lives. Ancient Athens was not only monuments; it was also roads, houses, layers, and time.',notice:['Look down and think in layers.','Notice walls, rooms, streets, and traces of daily life.','Ask what survives and what disappears.'],near:['Ancient neighborhood remains','Streets and walls','Layers beneath the museum'],words:['σπίτι — house','δρόμος — road','χρόνος — time','κάτω — below'],q:'What do the ruins under the museum make you feel about time?'},
+ 'Café / Reflection Break':{meaning:'This is a pause point, not a wasted stop. A museum visit becomes stronger when you stop and gather what you actually noticed.',notice:['Write one object you remember without looking.','Choose one Greek word from today.','Look back at the Acropolis or the city if you can.'],near:['Diary pause','View pause','Greek review'],words:['θυμάμαι — I remember','βλέπω — I see','μαθαίνω — I learn','όμορφο — beautiful'],q:'What one detail do you want to carry home?'}
 };
+function initWalk(){const s=document.getElementById('walkSelect');s.innerHTML=Object.keys(walkAreas).map(k=>`<option>${esc(k)}</option>`).join('');renderWalk();}
+function renderWalk(){const area=document.getElementById('walkSelect').value;const a=walkAreas[area];document.getElementById('walkBox').innerHTML=`<div class="card stop"><h3>${esc(area)}</h3><p><b>What this area means:</b> ${esc(a.meaning)}</p><p><b>What to look for:</b></p><ul>${a.notice.map(x=>`<li>${esc(x)}</li>`).join('')}</ul><p><b>Nearby highlights:</b> ${esc(a.near.join(', '))}</p><div class="tagrow">${a.words.map(w=>`<span class="tag">${esc(w)}</span>`).join('')}</div><div class="notice"><b>Reflection:</b> ${esc(a.q)}</div></div>`;}
+function saveWalkToDiary(){const area=document.getElementById('walkSelect').value;const a=walkAreas[area];state.diary.unshift({id:Date.now(),title:area,saw:a.meaning,felt:'Reflection: '+a.q+'\nGreek words: '+a.words.join(', '),when:new Date().toLocaleString()});save();go('diary');}
+const knowledge={caryatid:{keys:['caryatid','caryatids','καρυάτιδα','erechtheion'],simple:'A Caryatid is a sculpted female figure used as an architectural support. At the Acropolis, the Caryatids are connected to the Erechtheion temple.',story:'She is both woman and column. She holds up memory, temple, city, and loss. Her calm face makes the weight feel almost invisible.',notice:'Notice the balance: one leg bears weight, the other softens the body. Look at the folds of the dress, which behave like column grooves.',words:['Καρυάτιδα — Caryatid','ναός — temple','στήλη — column','μάρμαρο — marble']},kore:{keys:['kore','korai','κόρη','archaic'],simple:'A Kore is an Archaic statue of a young woman, often offered to Athena. She is usually shown standing, dressed beautifully, and smiling with the famous Archaic smile.',story:'She is a gift made human. Someone once offered her to the goddess, hoping to be seen, protected, remembered.',notice:'Look at the hair, jewelry, clothing folds, and the small smile. Many were once brightly painted, so imagine color instead of plain white marble.',words:['κόρη — maiden / young woman','προσφορά — offering','θεά — goddess','χρώμα — color']},parthenon:{keys:['parthenon','frieze','pediment','metope','παρθενώνας'],simple:'The Parthenon sculptures once belonged to the great temple of Athena on the Acropolis. They show gods, humans, animals, movement, ritual, conflict, and civic pride.',story:'The Parthenon was not only a building. It was Athens telling the world who it believed it was: protected by Athena, disciplined by beauty, and remembered through stone.',notice:'Notice motion in stone: horses turning, fabric moving, bodies leaning, gods appearing relaxed yet powerful.',words:['Παρθενώνας — Parthenon','ζωφόρος — frieze','θεός — god','πόλη — city']},slope:{keys:['slope','slopes','theater','sanctuary','διονύσου'],simple:'The slopes of the Acropolis show everyday sacred life around the hill: sanctuaries, theater, offerings, and public gathering places.',story:'Before the marble height of the Parthenon, there was daily life below it: people walking, praying, watching plays, making offerings, and living near the sacred rock.',notice:'Look for objects connected to rituals, theater, children, households, and small acts of devotion.',words:['θέατρο — theater','ιερό — sanctuary','λατρεία — worship','πόλη — city']}};
 function matchObj(txt){txt=String(txt||'').toLowerCase();return Object.values(knowledge).find(k=>k.keys.some(x=>txt.includes(x)))||null;}
-function explain(mode){const name=document.getElementById('objName').value.trim();const k=matchObj(name);let out='';if(!name){out='Type the object name or label first. Example: Caryatid, Kore statue, Parthenon frieze.';}else if(k){ if(mode==='simple')out=k.simple; if(mode==='story')out=k.story; if(mode==='notice')out=k.notice; if(mode==='greek')out=k.words.join('\n'); out+='\n\nAccuracy note: confirm the object name with the museum label or official guide.';}else{out=generic(name,mode);}document.getElementById('objResult').textContent=out;}
-function generic(name,mode){const label=`“${name}”`;const base={
- simple:`${label}\n\nThis app does not identify museum objects with certainty, but it can help you look carefully. Start by asking: what material is it made from, who or what is shown, what period or place does the label mention, and whether it was used for worship, daily life, architecture, or memory?`,
- story:`${label}\n\nImagine this object not as a dead artifact, but as something that once belonged to a living world: someone carved it, carried it, prayed near it, used it, repaired it, admired it, or feared what it represented. Ask what human need it answered: beauty, protection, power, devotion, grief, status, or belonging.`,
- notice:`${label}\n\nLook closely at: material, missing parts, posture, facial expression, clothing folds, symbols, animals, inscriptions, and signs of color. Notice whether the object feels public, sacred, domestic, political, or personal.`,
- greek:`${label}\n\nUseful words:\nάγαλμα — statue\nναός — temple\nμάρμαρο — marble\nθεά — goddess\nπροσφορά — offering\nαρχαίος — ancient`
-};return base[mode]+'\n\nAccuracy note: confirm with the museum label or official guide.';}
-
+function explain(mode){const name=document.getElementById('objName').value.trim();const k=matchObj(name);let out='';if(!name){out='Type the object name or label first. Example: Caryatid, Kore statue, Parthenon frieze.';}else if(k){out=mode==='simple'?k.simple:mode==='story'?k.story:mode==='notice'?k.notice:k.words.join('\n');out+='\n\nAccuracy note: confirm the object name with the museum label or official guide.';}else{out=generic(name,mode);}document.getElementById('objResult').textContent=out;}
+function generic(name,mode){const label=`“${name}”`;const base={simple:`${label}\n\nThis app does not identify museum objects with certainty, but it can help you look carefully. Ask: what material is it made from, who or what is shown, what period does the label mention, and whether it was used for worship, daily life, architecture, or memory?`,story:`${label}\n\nImagine this object not as a dead artifact, but as something that once belonged to a living world: someone carved it, carried it, prayed near it, used it, repaired it, admired it, or feared what it represented.`,notice:`${label}\n\nLook closely at material, missing parts, posture, facial expression, clothing folds, symbols, animals, inscriptions, and signs of color.`,greek:`${label}\n\nUseful words:\nάγαλμα — statue\nναός — temple\nμάρμαρο — marble\nθεά — goddess\nπροσφορά — offering\nαρχαίος — ancient`};return base[mode]+'\n\nAccuracy note: confirm with the museum label or official guide.';}
 document.getElementById('objPhoto').addEventListener('change',e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{const img=document.getElementById('preview');img.src=r.result;img.style.display='block';};r.readAsDataURL(f);});
-
-const routes={
- 30:['Slopes of the Acropolis','Caryatids / Erechtheion','Parthenon Gallery'],
- 60:['Slopes of the Acropolis','Archaic Acropolis Gallery','Caryatids / Erechtheion','Parthenon Gallery'],
- 90:['Slopes of the Acropolis','Archaic Acropolis Gallery','Caryatids / Erechtheion','Temple architecture details','Parthenon Gallery','Excavation museum'],
- 120:['Slopes of the Acropolis','Archaic Acropolis Gallery','Kore statues and color','Caryatids / Erechtheion','Temple architecture details','Parthenon Gallery','Excavation museum','Museum diary pause']
-};
-function stopText(name){const map={
- 'Slopes of the Acropolis':['Begin with the life around the sacred hill.','Look for theater, sanctuary, household, and offering objects.','θέατρο, ιερό, πόλη'],
- 'Archaic Acropolis Gallery':['This area brings you before the early sacred world of Athens.','Look for Kore statues, the Archaic smile, hair, clothing, and traces of color. Note: photography rules may be restricted here.','κόρη, θεά, χρώμα'],
- 'Kore statues and color':['Imagine these figures painted and alive with pattern.','Look at the smile, hair, jewelry, and the way beauty becomes devotion.','κόρη, προσφορά, ομορφιά'],
- 'Caryatids / Erechtheion':['Stand with the women who became columns.','Look at weight, balance, drapery, missing presence, and quiet dignity.','Καρυάτιδα, ναός, μάρμαρο'],
- 'Temple architecture details':['Understand how fragments become a building in your mind.','Look for columns, capitals, inscriptions, and sculptural fragments.','κίονας, ναός, πέτρα'],
- 'Parthenon Gallery':['End with Athens at its most ambitious.','Look at movement, horses, gods, civic ritual, and the museum’s alignment with the real Parthenon.','Παρθενώνας, ζωφόρος, θεός'],
- 'Excavation museum':['Look down into the layers beneath the museum.','Notice how modern Athens is built above older lives.','σπίτι, δρόμος, χρόνος'],
- 'Museum diary pause':['Stop before leaving and save one object you do not want to forget.','Write what you saw, what you felt, and one Greek word you learned.','θυμάμαι, βλέπω, μαθαίνω']
-};return map[name]||['Pause and look slowly.','Ask what this object was for, who made it, and why it survived.','άγαλμα, αρχαίος, μνήμη'];}
-function renderRoute(){const mins=document.getElementById('routeSelect').value;const box=document.getElementById('routeBox');box.innerHTML=routes[mins].map((r,i)=>{const t=stopText(r);return `<div class="card stop"><h3>${i+1}. ${esc(r)}</h3><p><b>Why it matters:</b> ${esc(t[0])}</p><p><b>What to notice:</b> ${esc(t[1])}</p><div class="tagrow"><span class="tag">Greek: ${esc(t[2])}</span><span class="tag">Reflection: What detail stayed with me?</span></div></div>`}).join('');}
+const routes={30:['Slopes of the Acropolis','Caryatids / Erechtheion','Parthenon Gallery'],60:['Slopes of the Acropolis','Archaic Acropolis Gallery','Caryatids / Erechtheion','Parthenon Gallery'],90:['Slopes of the Acropolis','Archaic Acropolis Gallery','Caryatids / Erechtheion','Temple architecture details','Parthenon Gallery','Excavation museum'],120:['Slopes of the Acropolis','Archaic Acropolis Gallery','Kore statues and color','Caryatids / Erechtheion','Temple architecture details','Parthenon Gallery','Excavation museum','Museum diary pause']};
+function stopText(name){const map={'Slopes of the Acropolis':['Begin with the life around the sacred hill.','Look for theater, sanctuary, household, and offering objects.','θέατρο, ιερό, πόλη'],'Archaic Acropolis Gallery':['This area brings you before the early sacred world of Athens.','Look for Kore statues, the Archaic smile, hair, clothing, and traces of color. Note: photography rules may be restricted here.','κόρη, θεά, χρώμα'],'Kore statues and color':['Imagine these figures painted and alive with pattern.','Look at the smile, hair, jewelry, and the way beauty becomes devotion.','κόρη, προσφορά, ομορφιά'],'Caryatids / Erechtheion':['Stand with the women who became columns.','Look at weight, balance, drapery, missing presence, and quiet dignity.','Καρυάτιδα, ναός, μάρμαρο'],'Temple architecture details':['Understand how fragments become a building in your mind.','Look for columns, capitals, inscriptions, and sculptural fragments.','κίονας, ναός, πέτρα'],'Parthenon Gallery':['End with Athens at its most ambitious.','Look at movement, horses, gods, civic ritual, and the museum’s alignment with the real Parthenon.','Παρθενώνας, ζωφόρος, θεός'],'Excavation museum':['Look down into the layers beneath the museum.','Notice how modern Athens is built above older lives.','σπίτι, δρόμος, χρόνος'],'Museum diary pause':['Stop before leaving and save one object you do not want to forget.','Write what you saw, what you felt, and one Greek word you learned.','θυμάμαι, βλέπω, μαθαίνω']};return map[name]||['Pause and look slowly.','Ask what this object was for, who made it, and why it survived.','άγαλμα, αρχαίος, μνήμη'];}
+function renderRoute(){const mins=document.getElementById('routeSelect').value;document.getElementById('routeBox').innerHTML=routes[mins].map((r,i)=>{const t=stopText(r);return `<div class="card stop"><h3>${i+1}. ${esc(r)}</h3><p><b>Why it matters:</b> ${esc(t[0])}</p><p><b>What to notice:</b> ${esc(t[1])}</p><div class="tagrow"><span class="tag">Greek: ${esc(t[2])}</span><span class="tag">Reflection: What detail stayed with me?</span></div></div>`}).join('');}
 const words=[['άγαλμα','ágalma','statue','Βλέπω ένα άγαλμα. — I see a statue.'],['ναός','naós','temple','Ο ναός είναι αρχαίος. — The temple is ancient.'],['θεά','theá','goddess','Η Αθηνά είναι θεά. — Athena is a goddess.'],['θεός','theós','god','Ο Δίας είναι θεός. — Zeus is a god.'],['μάρμαρο','mármaro','marble','Το μάρμαρο είναι λευκό. — The marble is white.'],['προσφορά','prosforá','offering','Αυτή είναι μια προσφορά. — This is an offering.'],['ζωφόρος','zofóros','frieze','Η ζωφόρος έχει κίνηση. — The frieze has movement.'],['κίονας','kíonas','column','Ο κίονας κρατά τον ναό. — The column holds the temple.'],['αρχαίος','archaíos','ancient','Αυτό είναι αρχαίο. — This is ancient.'],['μουσείο','mouseío','museum','Είμαι στο μουσείο. — I am at the museum.']];
 function renderWords(){document.getElementById('wordsBox').innerHTML=words.map(w=>`<div class="card word"><div><strong>${w[0]}</strong><br><small>${w[1]} — ${w[2]}<br>${w[3]}</small></div><button class="speak" onclick="speak('${w[0]}')">Listen</button></div>`).join('');}
 function speak(txt){if(!('speechSynthesis' in window))return alert('Speech is not supported on this browser.');const u=new SpeechSynthesisUtterance(txt);u.lang='el-GR';speechSynthesis.cancel();speechSynthesis.speak(u);}
 function saveDiaryFromObject(){const title=document.getElementById('objName').value.trim()||'Museum object';const saw=document.getElementById('objResult').textContent;const felt=document.getElementById('objFeeling').value.trim();state.diary.unshift({id:Date.now(),title,saw,felt,when:new Date().toLocaleString()});save();go('diary');}
 function saveDiaryManual(){const title=document.getElementById('diaryTitle').value.trim()||'Museum memory';const saw=document.getElementById('diarySaw').value.trim();const felt=document.getElementById('diaryFelt').value.trim();state.diary.unshift({id:Date.now(),title,saw,felt,when:new Date().toLocaleString()});document.getElementById('diaryTitle').value='';document.getElementById('diarySaw').value='';document.getElementById('diaryFelt').value='';save();renderDiary();}
-function renderDiary(){const box=document.getElementById('diaryList');if(!state.diary.length){box.innerHTML='<div class="empty">No diary entries yet.</div>';return;}box.innerHTML=state.diary.map(d=>`<div class="diary-item"><h3>${esc(d.title)}</h3><small>${esc(d.when)}</small><p>${esc(d.saw)}</p>${d.felt?`<p><b>What I felt:</b> ${esc(d.felt)}</p>`:''}<button class="delete" onclick="deleteDiary(${d.id})">Delete</button></div>`).join('');}
+function renderDiary(){const box=document.getElementById('diaryList');if(!state.diary.length){box.innerHTML='<div class="empty small">No diary entries yet.</div>';return;}box.innerHTML=state.diary.map(d=>`<div class="diary-item"><h3>${esc(d.title)}</h3><small>${esc(d.when)}</small><p>${esc(d.saw)}</p>${d.felt?`<p><b>What I felt:</b> ${esc(d.felt)}</p>`:''}<button class="delete" onclick="deleteDiary(${d.id})">Delete</button></div>`).join('');}
 function deleteDiary(id){state.diary=state.diary.filter(x=>x.id!==id);save();renderDiary();}
+function exportDiary(){const text=state.diary.map(d=>`${d.title}\n${d.when}\n\nWhat I saw:\n${d.saw||''}\n\nWhat I felt / learned:\n${d.felt||''}\n\n---`).join('\n');const blob=new Blob([text||'No diary entries yet.'],{type:'text/plain'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='acropolis-museum-diary.txt';a.click();URL.revokeObjectURL(a.href);}
 if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));}
-renderRoute();renderWords();renderDiary();
-</script>
-</body>
-</html>
+initWalk();renderRoute();renderWords();renderDiary();
+</script></body></html>
