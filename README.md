@@ -1,18 +1,71 @@
-# Acropolis Companion — V2.1 Floor-by-Floor Museum Mode
+# Acropolis Companion — v2.2
 
-A GitHub Pages-ready, offline-first PWA for exploring the Acropolis Museum with clearer floor guidance, practical camera scan notes, Greek learning, and a personal museum diary.
+A GitHub Pages-ready, dependency-free, offline-first PWA for exploring the Acropolis Museum with floor-by-floor guidance, practical camera scan notes, Greek learning, and a storage-safe personal museum diary.
 
-**Version visible in app:** `v2.1 Floor-by-Floor Museum Mode`
+**Version visible in app:** `v2.2`
 
 ## What this app does
 
-Acropolis Companion is a personal museum companion. It does **not** replace the official Acropolis Museum Digital Guide. It helps you move through the museum, understand what floor/gallery you are in, capture object photos where allowed, confirm the museum label, learn Greek words, and save your visit as a personal memory book.
+Acropolis Companion is a personal museum companion. It does **not** replace the official Acropolis Museum Digital Guide. It helps you move through the museum, understand what floor/gallery you are in, capture object photos where allowed, confirm the museum label, use guided-looking prompts, learn Greek words, and save your visit as a personal memory book.
 
-## V2.1 upgrade
+## v2.2 upgrade
 
-V2.1 fixes the main weakness in the earlier Museum Walk Mode: it now tells you **which floor or museum area you are talking about**.
+v2.2 focuses on diary safety and honest object-explainer framing.
 
-Instead of general area names only, V2.1 adds a floor-by-floor structure:
+### 1. Storage-safe diary photos
+
+Earlier versions stored diary photos as large base64 strings inside the same `localStorage` object as the diary text. After a few photos, browser storage could fill up and saving could fail.
+
+v2.2 changes this:
+
+- Diary text remains in `localStorage`.
+- Diary photos are stored separately in `IndexedDB`.
+- The diary state now keeps only a lightweight photo reference.
+- The diary loads photos asynchronously when rendering entries.
+- The app wraps `save()` in `try/catch` and shows a clear warning if saving fails.
+
+### 2. One-time photo migration
+
+On first load, v2.2 checks for older diary entries that still contain base64 photo data inside `localStorage`.
+
+If old photos are found, the app:
+
+1. Copies each old photo into `IndexedDB`.
+2. Replaces the old base64 photo in `localStorage` with a lightweight photo reference.
+3. Keeps the diary entry text intact.
+
+If the migration cannot move a photo for any reason, the app leaves the original photo data in place instead of deleting it. This is designed to avoid losing existing diary entries or photos.
+
+### 3. Photo-preserving export
+
+v2.2 keeps the existing plain-text diary export and adds a stronger backup option:
+
+- **Export text** — exports diary text as `.txt`.
+- **Export HTML + photos** — exports one self-contained `.html` file with diary text and photos embedded inline.
+
+Use **Export HTML + photos** after your visit if you want a permanent backup that still shows your images even if browser data is later cleared.
+
+### 4. Honest guided-looking copy
+
+The former “Object Explainer” wording has been adjusted. The app now frames this feature as a **Guided Object Looking Tool**.
+
+This is more accurate because the app does not contain a full museum object database. For most objects, it helps you:
+
+- observe more carefully,
+- use the museum label,
+- ask better questions,
+- understand object type and context,
+- save your own interpretation.
+
+The app still reminds you to confirm exact object identity with the museum label or the official Acropolis Museum Digital Guide.
+
+### 5. Version consistency
+
+The app uses one visible version string everywhere: `v2.2`.
+
+## Floor-by-floor Museum Mode
+
+The app includes a floor-by-floor structure:
 
 - **Level -1 — Excavation Museum**
 - **Ground Floor — Gallery of the Acropolis Slopes**
@@ -24,7 +77,7 @@ Instead of general area names only, V2.1 adds a floor-by-floor structure:
 - **Second Floor — Rest / Restaurant / Bookshop**
 - **Third Floor — Parthenon Gallery**
 
-Each floor/gallery guide now includes:
+Each floor/gallery guide includes:
 
 - Floor / level
 - Gallery name
@@ -46,25 +99,11 @@ The app includes a special warning for the **First Floor — Archaic Acropolis G
 
 In all other areas, the app reminds the user to follow posted museum signs, avoid flash, avoid blocking visitors, and confirm museum rules.
 
-## Route improvements in V2.1
+## Practical Camera Scan
 
-The Essential Route now follows the museum more clearly by floor:
+The Scan tab is a practical capture-and-confirm tool, not automatic AI object recognition.
 
-1. Ground Floor — Gallery of the Acropolis Slopes
-2. First Floor — Early History of the Acropolis
-3. First Floor — Archaic Acropolis Gallery
-4. First Floor — Periklean Monuments
-5. First Floor — Caryatids / Erechtheion
-6. First Floor — Later Acropolis
-7. Third Floor — Parthenon Gallery
-8. Second Floor — Rest / Restaurant / Bookshop
-9. Level -1 — Excavation Museum
-
-The 30-, 60-, 90-, and 120-minute route options were also updated to use these clearer floor/gallery names.
-
-## Scan improvements preserved
-
-V2.1 preserves the V2.0.1 **Retake Photo** fix:
+Recommended flow:
 
 1. Take or upload a photo.
 2. Preview the photo.
@@ -72,22 +111,21 @@ V2.1 preserves the V2.0.1 **Retake Photo** fix:
 4. Confirm the museum label or official guide name.
 5. Add object type, museum area, and visible clues.
 6. Create a practical scan guide.
-7. Send details into the Object Explainer.
+7. Send details into Guided Object Looking.
 8. Save the photo and notes to the Museum Diary.
-
-This is still the safe practical scan version, not automatic AI object recognition.
 
 ## Existing features preserved
 
 - Practical Camera Scan
 - Retake Photo button
-- Smarter Object Explainer
+- Floor-by-Floor Museum Mode
+- Guided Object Looking Tool
 - Essential Route with progress tracking
 - Mark route stops done
 - Save route stops to diary
 - Greek Learning Mode with themed vocabulary, phrases, listening, and mini quiz
-- Beautiful Museum Diary with photos, editing, search, delete, and export
-- Offline-first localStorage saving
+- Museum Diary with photos, editing, search, delete, text export, and HTML + photos export
+- Offline-first saving
 - GitHub Pages-ready static files
 
 ## Files included
@@ -112,17 +150,27 @@ Upload all of these files to your GitHub repository:
 6. Open the GitHub Pages link.
 7. On iPhone Safari, tap **Share → Add to Home Screen**.
 
+## Testing the v2.2 migration
+
+Before replacing your live app, test on a copy:
+
+1. Open your current version.
+2. Add two diary entries with photos.
+3. Upload v2.2 to a test GitHub Pages repo or branch.
+4. Open v2.2 in the same browser profile.
+5. Confirm the old diary entries still appear.
+6. Confirm the old photos still appear.
+7. Try **Export HTML + photos** and open the exported file.
+
+The migration is designed not to delete old photo data unless the new IndexedDB copy succeeds and the localStorage state saves successfully.
+
 ## Important accuracy note
 
-V2.1 is **not yet true AI object recognition**. The camera/photo feature helps you capture the object and move confirmed information into the explainer and diary. For object identity, confirm with the museum label or the official Acropolis Museum Digital Guide.
-
-## Storage note
-
-Diary entries are stored locally in the browser using `localStorage`. If the browser data is cleared, diary entries may be removed. Use **Export text** after your museum visit to save a copy.
+v2.2 is **not true AI object recognition**. The camera/photo feature helps you capture the object and move confirmed information into Guided Object Looking and the diary. For object identity, confirm with the museum label or the official Acropolis Museum Digital Guide.
 
 ## Suggested next upgrade
 
-**V2.2 Deeper Parthenon Gallery Mode**
+**v2.3 Deeper Parthenon Gallery Mode**
 
 Possible next improvements:
 
