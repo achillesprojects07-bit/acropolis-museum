@@ -1,46 +1,51 @@
-# Acropolis Companion — V1.2 Essential Route
+# Acropolis Companion V1.3
 
-A GitHub Pages-ready, offline-first PWA for visiting the Acropolis Museum.
+A GitHub Pages-ready offline-first PWA for visiting the Acropolis Museum.
 
-**Version visible in the app:** `v1.2 Essential Route`
+**Visible app version:** `v1.3 Smarter Object Explainer`
 
-## What this app does
+## What is new in V1.3
 
-Acropolis Companion is a personal museum guide. It does not replace the official Acropolis Museum Digital Guide. It helps you:
+V1.3 upgrades the object explanation flow so the app feels more like a careful museum guide.
 
-- choose where you are standing inside the museum
-- follow an Essential Acropolis Museum route
-- understand what to look for at each stop
-- learn simple museum Greek words
-- save reflections in a local Museum Diary
-- type an object label and receive a simple explanation, story version, looking prompts, or Greek words
+New features:
 
-## New in V1.2
+- Smarter Object Explainer screen
+- Object type selector:
+  - I don’t know yet
+  - Statue / figure
+  - Marble relief / frieze / carved scene
+  - Temple part / column / architecture
+  - Pottery / vessel
+  - Inscription / written stone
+  - Jewelry / small object / offering
+- Larger museum-label input box
+- Optional museum-area selector
+- Optional visible-clue field
+- Six explanation styles:
+  - Explain simply
+  - Tell me the story
+  - Look closer
+  - Why it matters
+  - Ask me questions
+  - Greek words
+- Better generic explanations when the exact object is unknown
+- Stronger accuracy reminders to confirm exact identification with the museum label or official guide
 
-- Added **Essential Acropolis Museum Route** as the recommended route.
-- Added route progress tracking.
-- Added **Mark this stop done** buttons.
-- Added route progress bar.
-- Added **Save this stop** to diary.
-- Added **Save route to diary**.
-- Updated app header/version badge to `v1.2 Essential Route`.
-- Updated service worker cache name to help GitHub Pages refresh.
-- Updated README.
-
-## V1.1 features preserved
+## Preserved from V1.2
 
 - Museum Walk Mode
-- Area guides for museum zones
-- Greek words by area
-- Reflection questions
-- Object explainer
+- Essential Walk route
+- Route progress tracker
+- Mark stop done
+- Save route / stop to diary
+- Greek words mode
 - Museum diary
 - Export diary as text
-- Offline-first PWA structure
+- Offline-first service worker
+- GitHub Pages compatibility
 
 ## Files included
-
-Upload all files to your GitHub repository root:
 
 - `index.html`
 - `manifest.webmanifest`
@@ -50,28 +55,20 @@ Upload all files to your GitHub repository root:
 ## How to publish on GitHub Pages
 
 1. Create or open your GitHub repository.
-2. Upload the four files above to the root of the repo.
+2. Upload all 4 files to the root of the repo.
 3. Go to **Settings → Pages**.
 4. Under **Build and deployment**, choose:
    - Source: **Deploy from a branch**
    - Branch: **main**
    - Folder: **/root**
 5. Save.
-6. Open the GitHub Pages URL on your iPhone.
-7. In Safari, tap **Share → Add to Home Screen**.
+6. Open the GitHub Pages URL on your phone.
+7. On iPhone Safari, tap **Share → Add to Home Screen**.
 
 ## Important accuracy note
 
-This app is not a guaranteed object-recognition system. For exact identification of museum objects, confirm with the museum label or the official Acropolis Museum Digital Guide.
+This app does not replace the official Acropolis Museum Digital Guide. It helps you interpret and remember what you see. For exact object identification, confirm with the museum label or the official guide.
 
-## Suggested next version
+## Recommended next upgrade
 
-**V1.3 — Smarter Object Explainer**
-
-Recommended next upgrades:
-
-- object type selector
-- guided label input
-- explanation style cards
-- stronger “Look Closer” prompts
-- more object templates for Caryatid, Kore, Parthenon frieze, metope, pediment, inscription, pottery, and architectural fragments
+V1.4 should upgrade the Museum Diary into a more beautiful memory book with editable entries, photo display, favorite-detail fields, and better export formatting.
