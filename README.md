@@ -1,74 +1,85 @@
-# Acropolis Companion V1.3
+# Acropolis Companion — V1.4 Beautiful Museum Diary
 
-A GitHub Pages-ready offline-first PWA for visiting the Acropolis Museum.
+A GitHub Pages-ready, offline-first PWA for exploring the Acropolis Museum.
 
-**Visible app version:** `v1.3 Smarter Object Explainer`
+**Version visible in app:** `v1.4 Beautiful Museum Diary`
 
-## What is new in V1.3
+## What this app does
 
-V1.3 upgrades the object explanation flow so the app feels more like a careful museum guide.
+Acropolis Companion is a personal museum companion. It does **not** replace the official Acropolis Museum Digital Guide. It helps you move through the museum, understand what you are seeing, learn Greek words, and save your visit as a personal memory book.
 
-New features:
+## V1.4 upgrade
 
-- Smarter Object Explainer screen
-- Object type selector:
-  - I don’t know yet
-  - Statue / figure
-  - Marble relief / frieze / carved scene
-  - Temple part / column / architecture
-  - Pottery / vessel
-  - Inscription / written stone
-  - Jewelry / small object / offering
-- Larger museum-label input box
-- Optional museum-area selector
-- Optional visible-clue field
-- Six explanation styles:
-  - Explain simply
-  - Tell me the story
-  - Look closer
-  - Why it matters
-  - Ask me questions
-  - Greek words
-- Better generic explanations when the exact object is unknown
-- Stronger accuracy reminders to confirm exact identification with the museum label or official guide
+V1.4 focuses on the Museum Diary.
 
-## Preserved from V1.2
+New / upgraded features:
+
+- Beautiful Museum Diary screen
+- Add optional photo to a diary entry
+- Edit saved diary entries
+- Delete saved diary entries
+- Search diary entries
+- Save museum area per entry
+- Separate fields for:
+  - What I saw
+  - What I felt
+  - Greek words I learned
+  - Favorite detail
+- Export diary as a `.txt` file
+- Object Explainer photo can now be saved into the diary entry
+- Version badge updated inside the app
+- Service worker cache updated for GitHub Pages refresh
+
+## Existing features preserved
 
 - Museum Walk Mode
-- Essential Walk route
+- Essential Route
 - Route progress tracker
-- Mark stop done
-- Save route / stop to diary
-- Greek words mode
-- Museum diary
-- Export diary as text
-- Offline-first service worker
-- GitHub Pages compatibility
+- Mark route stops done
+- Save route stops to diary
+- Smarter Object Explainer
+- Greek Words Mode with el-GR speech support where available
+- Offline-first localStorage saving
+- GitHub Pages-ready static files
 
 ## Files included
+
+Upload all of these files to your GitHub repository:
 
 - `index.html`
 - `manifest.webmanifest`
 - `sw.js`
 - `README.md`
 
-## How to publish on GitHub Pages
+## How to deploy on GitHub Pages
 
 1. Create or open your GitHub repository.
-2. Upload all 4 files to the root of the repo.
+2. Upload all files from this ZIP.
 3. Go to **Settings → Pages**.
 4. Under **Build and deployment**, choose:
    - Source: **Deploy from a branch**
    - Branch: **main**
    - Folder: **/root**
 5. Save.
-6. Open the GitHub Pages URL on your phone.
+6. Open the GitHub Pages link.
 7. On iPhone Safari, tap **Share → Add to Home Screen**.
 
 ## Important accuracy note
 
-This app does not replace the official Acropolis Museum Digital Guide. It helps you interpret and remember what you see. For exact object identification, confirm with the museum label or the official guide.
+This app is not yet a true museum object-recognition app. For object identity, confirm with the museum label or the official Acropolis Museum Digital Guide. The app is designed as a guided interpretation, Greek-learning, and diary companion.
 
-## Recommended next upgrade
+## Storage note
 
-V1.4 should upgrade the Museum Diary into a more beautiful memory book with editable entries, photo display, favorite-detail fields, and better export formatting.
+Diary entries are stored locally in the browser using `localStorage`. If the browser data is cleared, diary entries may be removed. Use **Export text** after your museum visit to save a copy.
+
+## Suggested next upgrade
+
+**V1.5 — Greek Learning Mode upgrade**
+
+Recommended next improvements:
+
+- More museum vocabulary by area
+- Phrase practice for asking questions in Greek
+- Mini quizzes
+- Saved Greek words from diary entries
+- “Words I learned today” review screen
